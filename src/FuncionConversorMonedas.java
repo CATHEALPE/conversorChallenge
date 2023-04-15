@@ -5,6 +5,16 @@ public class FuncionConversorMonedas {
 
 	}
 	
+	public static boolean validarNumero(String cantidadIngresada) {
+		try {
+			double x = Double.parseDouble(cantidadIngresada);
+				if(x >= 0 || x < 0);
+				return true;
+			} catch (NumberFormatException e) {
+				return false;
+			}
+	}
+	
 	public void ConvertirPesosColADolares(double valor) {
 		double moneda = valor / 4512.32;
 		moneda = (double) Math.round(moneda * 100d)/100;

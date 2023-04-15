@@ -26,7 +26,7 @@ public class MenuPrincipal {
 	
 }
 
-//como esta funciona el codigo, falta hacer bien los calculos 
+//como esta funciona el codigo
 //falta organizar para que se salga del programa 
-//verificacion de cantidad ingresada valida
 //intentar consumir una api para la tasa
+//falta conversor temperatura
