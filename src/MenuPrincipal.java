@@ -15,18 +15,21 @@ public class MenuPrincipal {
 		
 		String opcionElegida = (String) JOptionPane.showInputDialog(null, "Seleccione una opción de conversión", "Menu", JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 		
-		JOptionPane.showMessageDialog(null,"Usted selecciono " + opcionElegida );
-		
 		if (opcionElegida == "Conversor de Moneda") {
-
+			JOptionPane.showMessageDialog(null,"Usted selecciono " + opcionElegida );
 			MenuMonedas nuevaConversionMoneda = new MenuMonedas();
 			nuevaConversionMoneda.opcionesMonedas();
+			
+		} else if (opcionElegida == "Conversor de Temperatura") {
+			JOptionPane.showMessageDialog(null,"Usted selecciono " + opcionElegida );
+			//implemntación conversor tempteratura
+			
+		} else {
+			JOptionPane.showMessageDialog(null,"Programa Terminado");
 		}
 	}
-	
 }
 
 //como esta funciona el codigo
-//falta organizar para que se salga del programa 
 //intentar consumir una api para la tasa
 //falta conversor temperatura

@@ -3,70 +3,120 @@ import javax.swing.JOptionPane;
 public class MenuMonedas {
 
 	public static void main(String[] args) {
+		
+	}
+	
+	public static void ValidarContinuidad(int respuesta) {
+		
 	}
 
 	public static void opcionesMonedas() {
 
-		String opcionesDeA[] = { "De Pesos a Dólar", "De Pesos a Euro", "De Pesos a Libras", "De Pesos a Yen",
-				"De Pesos a Won Coreano", "De Dólar a Pesos", "De Euro a Pesos", "De Libras a Pesos", "De Yen a Pesos",
-				"De Won Coreano a Pesos" };
+		boolean continuidad = true;
+		
+		
+		
+		while (continuidad) {
+			
+			try {
 
-		String conversionMonedaElegida = (JOptionPane.showInputDialog(null, "Seleccione una opción de conversión",
-				"Menu", JOptionPane.DEFAULT_OPTION, null, opcionesDeA, opcionesDeA[0])).toString();
+				String opcionesDeA[] = { "De Pesos a Dólar", "De Pesos a Euro", "De Pesos a Libras", "De Pesos a Yen",
+						"De Pesos a Won Coreano", "De Dólar a Pesos", "De Euro a Pesos", "De Libras a Pesos",
+						"De Yen a Pesos", "De Won Coreano a Pesos" };
 
-		FuncionConversorMonedas monedas = new FuncionConversorMonedas();
+				String conversionMonedaElegida = (JOptionPane.showInputDialog(null,
+						"Seleccione una opción de conversión", "Menu", JOptionPane.QUESTION_MESSAGE, null, opcionesDeA,
+						opcionesDeA[0])).toString();
 
-		// String cantidadIngresada;
-		// Double cantidad = Double.parseDouble(cantidadIngresada =
-		// JOptionPane.showInputDialog(null, "Ingrese la cantidad: "));
+				FuncionConversorMonedas monedas = new FuncionConversorMonedas();
 
-		String cantidadIngresada = JOptionPane.showInputDialog("Ingrese la cantidad de dinero a convertir ");
-		if (monedas.validarNumero(cantidadIngresada)) {
-			double cantidad = Double.parseDouble(cantidadIngresada);
+				String cantidadIngresada = JOptionPane.showInputDialog("Ingrese la cantidad de dinero a convertir ");
 
-			switch (conversionMonedaElegida) {
-			case "De Pesos a Dólar":
-				monedas.ConvertirPesosColADolares(cantidad);
-				break;
+				if (monedas.validarNumero(cantidadIngresada)) {
+					double cantidad = Double.parseDouble(cantidadIngresada);
+					
+					switch (conversionMonedaElegida) {
+					case "De Pesos a Dólar":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirPesosColADolares(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Pesos a Euro":
-				monedas.ConvertirPesosColAEuros(cantidad);
-				break;
+					case "De Pesos a Euro":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirPesosColAEuros(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Pesos a Libras":
-				monedas.ConvertirPesosColALibras(cantidad);
-				break;
+					case "De Pesos a Libras":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirPesosColALibras(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Pesos a Yen":
-				monedas.ConvertirPesosColAYen(cantidad);
-				break;
+					case "De Pesos a Yen":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirPesosColAYen(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Pesos a Won Coreano":
-				monedas.ConvertirPesosColAWonCoreano(cantidad);
-				break;
+					case "De Pesos a Won Coreano":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirPesosColAWonCoreano(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Dólar a Pesos":
-				monedas.ConvertirDolarAPesos(cantidad);
-				break;
+					case "De Dólar a Pesos":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirDolarAPesos(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Euro a Pesos":
-				monedas.ConvertirEuroAPesos(cantidad);
-				break;
+					case "De Euro a Pesos":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirEuroAPesos(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Libras a Pesos":
-				monedas.ConvertirLibrasAPesos(cantidad);
-				break;
+					case "De Libras a Pesos":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirLibrasAPesos(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Yenes a Pesos":
-				monedas.ConvertirYenesAPesos(cantidad);
-				break;
+					case "De Yen a Pesos":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirYenesAPesos(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
 
-			case "De Wones Coreados a Pesos":
-				monedas.ConvertirWonesCoreanosAPesos(cantidad);
-				break;
+					case "De Won Coreano a Pesos":
+						if(JOptionPane.OK_OPTION != monedas.ConvertirWonesCoreanosAPesos(cantidad)) {
+							continuidad = false;
+							JOptionPane.showMessageDialog(null,"Programa Terminado");
+						}
+						break;
+					}
+					
+
+				} else {
+					continuidad = false;
+					JOptionPane.showMessageDialog(null, "Por favor ingresar un valor válido, Programa terminado");
+				}
+				
+			} catch (NullPointerException e) {
+				continuidad = false;
+				JOptionPane.showMessageDialog(null, "Programa Terminado");
 			}
-		} else {
-			JOptionPane.showMessageDialog(null, "Por favor ingresar un valor válido");
 		}
 
 	}
