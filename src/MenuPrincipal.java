@@ -20,9 +20,9 @@ public class MenuPrincipal {
 			MenuMonedas nuevaConversionMoneda = new MenuMonedas();
 			nuevaConversionMoneda.opcionesMonedas();
 			
-		} else if (opcionElegida == "Conversor de Temperatura") {
+		} else if (opcionElegida == "Conversor Edad Perros") {
 			JOptionPane.showMessageDialog(null,"Usted selecciono " + opcionElegida );
-			//implemntación conversor tempteratura
+			//implemntación conversor Edad Perros
 			
 		} else {
 			JOptionPane.showMessageDialog(null,"Programa Terminado");
@@ -32,4 +32,4 @@ public class MenuPrincipal {
 
 //como esta funciona el codigo
 //intentar consumir una api para la tasa
-//falta conversor temperatura
+//falta conversor edad perros
